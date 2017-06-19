@@ -40,3 +40,5 @@ angular2-app/app/transpiled-js
 
 # Optional REPL history
 .node_repl_history
+/server/node_modules
+/client/node_modules
