@@ -20,8 +20,8 @@ app.use(bodyParser.json());
 // routes ======================================================================
 require('./router/image-upload.routes')(app);
 require('./router/image-copy.routes')(app);
+require('./router/image-view.route')(app);
 require('./router/pdf-download.routes')(app);
-
 
 app.listen('3001', function () {
     console.log('running on 3001...');

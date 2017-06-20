@@ -9,9 +9,6 @@ module.exports = function (app) {
         var source = 'C:/Demo Project/image-upload-download/assets/images/Test/school_b1.jpg';
         var destination = 'C:/Demo Project/image-upload-download/assets/images/TestNew/school_b1.jpg';
 
-        //var str = request.pathname;
-        //var action = str.replace(/%20/g, " ");
-
         fs.readFile(source, function (err, data) {
             if (data) {
                 fs.writeFile(destination, data, function (err) {

@@ -8,6 +8,8 @@ module.exports = function (app) {
         filename: function (req, file, cb) {
             //var datetimestamp = Date.now();
             // cb(null, file.fieldname + '-' + datetimestamp + '.' + file.originalname.split('.')[file.originalname.split('.').length - 1]);
+            console.log("file.originalname");
+            console.log(file.originalname);
             cb(null, file.originalname);
         }
     });

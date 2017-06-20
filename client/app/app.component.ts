@@ -8,7 +8,9 @@ import { FileUploader } from 'ng2-file-upload';
                         <div class="navbar-header">
                         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                             <ul class="nav navbar-nav">
-                            <li><a>File Upload</a></li>
+                             <li><a>File Upload</a></li>
+                             <li><a href=" http://localhost:3001/copy" target="_blank">Image copy</a></li>                            
+                             <li><a href=" http://localhost:3001/download" target="_blank">View Pdf</a></li>
                             </ul>
                         </div>
                         </div>
@@ -25,7 +27,11 @@ import { FileUploader } from 'ng2-file-upload';
                                 <div class="form-group">
                                     <label for="single">single</label>
                                     <input type="file" class="form-control" name="single" ng2FileSelect [uploader]="uploader" />                                  
-                                </div>            
+                                </div>      
+                                <div class="form-group">
+                                    <p><label for="single">Image</label></p>
+                                    <p><a href="http://localhost:3001/{{imageBaseUrl}}{{imageName}}" target="_blank"><img  class="site-image" src="http://localhost:3001/{{imageBaseUrl}}{{imageName}}" (click)="childModal.show()"></a></p>                         
+                                </div>         
                             </form>
                         </div>
                         <div class="col-md-8">
@@ -99,5 +105,8 @@ import { FileUploader } from 'ng2-file-upload';
                 </div>`
 })
 export class AppComponent {
-    public uploader:FileUploader = new FileUploader({url:'http://localhost:3001/upload'});
+    public imageBaseUrl = 'image/TestNew/';
+    public imageName = 'school_b1.jpg';
+
+    public uploader: FileUploader = new FileUploader({ url: 'http://localhost:3001/upload' });
 } 
